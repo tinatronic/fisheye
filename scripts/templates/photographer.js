@@ -1,17 +1,32 @@
 function photographerTemplate(data) {
-    const { name, portrait } = data;
+    const { name, id, city, country, tagline, price, portrait } = data;
 
     const picture = `assets/photographers/${portrait}`;
 
     function getUserCardDOM() {
-        const article = document.createElement( 'article' );
-        const img = document.createElement( 'img' );
-        img.setAttribute("src", picture)
-        const h2 = document.createElement( 'h2' );
-        h2.textContent = name;
-        article.appendChild(img);
-        article.appendChild(h2);
-        return (article);
+        const photographerCard = document.createElement('article');
+        const userPicture = document.createElement('img');
+        userPicture.setAttribute("src", picture);
+        userPicture.setAttribute("alt", name);
+        const userName = document.createElement('h2');
+        userName.textContent = name;
+        const userLocation = document.createElement('p');
+        userLocation.textContent = (`${city}, ${country}`);
+        userLocation.setAttribute("class", "location");
+        const userTagline = document.createElement('p');
+        userTagline.textContent = tagline;
+        userTagline.setAttribute("class", "tagline");
+        const userPrice = document.createElement('p');
+        userPrice.textContent = (`${price}€/jour`);
+        userPrice.setAttribute("class", "price");
+
+        photographerCard.appendChild(userPicture);
+        photographerCard.appendChild(userName);
+        photographerCard.appendChild(userLocation);
+        photographerCard.appendChild(userTagline);
+        photographerCard.appendChild(userPrice);
+
+        return photographerCard;
     }
-    return { name, picture, getUserCardDOM }
+    return { data, getUserCardDOM }
 }
