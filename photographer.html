@@ -12,9 +12,7 @@
       <img src="assets/images/logo.png" class="logo" />
     </header>
     <main id="main">
-      <div class="photograph-header">
-        <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
-      </div>
+      <div class="photograph-header"></div>
     </main>
     <div id="contact_modal">
 			<div class="modal">
@@ -31,7 +29,9 @@
 				</form>
 			</div>
 		</div>
-    <script src="/scripts/pages/photographer.js"></script>
-    <script src="/scripts/utils/contactForm.js"></script>
+    <script src="scripts/api/api.js"></script>
+    <script src="scripts/pages/photographer.js" type="module"></script>
+    <script src="scripts/templates/homeTemplate.js"></script>
+    <script src="scripts/utils/contactForm.js"></script>
   </body>
 </html>
